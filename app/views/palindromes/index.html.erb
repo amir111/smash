@@ -1,0 +1,23 @@
+<h1>Listing palindromes</h1>
+
+<table>
+  <tr>
+    <th>Word</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @palindromes.each do |palindrome| %>
+  <tr>
+    <td><%= palindrome.word %></td>
+    <td><%= link_to 'Show', palindrome %></td>
+    <td><%= link_to 'Edit', edit_palindrome_path(palindrome) %></td>
+    <td><%= link_to 'Destroy', palindrome, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Palindrome', new_palindrome_path %>
